@@ -1,13 +1,13 @@
 package com.aussong.data.structure.binarySearchTree;
 
 public class LinkedList<T extends Comparable<T>> {
-	private LinkedNode<T> start;
+	private LinkedListNode<T> start;
 	
-	public LinkedNode<T> getStart() {
+	public LinkedListNode<T> getStart() {
 		return start;
 	}
 
-	public void setStart(LinkedNode<T> start) {
+	public void setStart(LinkedListNode<T> start) {
 		this.start = start;
 	}
 }

@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BinaryTree<T extends Comparable<T>> {
-	private BinaryTreeNode<T> root;
+public class BinarySearchTree<T extends Comparable<T>> {
+	private BinarySearchTreeNode<T> root;
 	
-	public BinaryTreeNode<T> getRoot() {
+	public BinarySearchTreeNode<T> getRoot() {
 		return root;
 	}
 
-	public void setRoot(BinaryTreeNode<T> root) {
+	public void setRoot(BinarySearchTreeNode<T> root) {
 		this.root = root;
 	}
 	
-	public List<BinaryTreeNode<T>> inorderTraversal() {
-		List<BinaryTreeNode<T>> listAll = new ArrayList<BinaryTreeNode<T>>();
+	public List<BinarySearchTreeNode<T>> inorderTraversal() {
+		List<BinarySearchTreeNode<T>> listAll = new ArrayList<BinarySearchTreeNode<T>>();
 		if (this.root != null) {
 			if (this.root.getLeft() != null) {
-				List<BinaryTreeNode<T>> listLeft = root.getLeft().inorderTraversal();
+				List<BinarySearchTreeNode<T>> listLeft = root.getLeft().inorderTraversal();
 				listAll.addAll(listLeft);
 			}
 			
 			listAll.add(this.root);
 			
 			if (this.root.getRight() != null) {
-				List<BinaryTreeNode<T>> listRight = root.getRight().inorderTraversal();
+				List<BinarySearchTreeNode<T>> listRight = root.getRight().inorderTraversal();
 				listAll.addAll(listRight);
 			}
 		}
@@ -35,15 +35,15 @@ public class BinaryTree<T extends Comparable<T>> {
 	}
 	
 	public LinkedList<T> toLinkedList() {
-		List<BinaryTreeNode<T>> nodes = inorderTraversal();
-		LinkedBinaryTreeNode<T> prev = null;
+		List<BinarySearchTreeNode<T>> nodes = inorderTraversal();
+		LinkedBinarySearchTreeNode<T> prev = null;
 		
 		LinkedList<T> linkedList = new LinkedList<T>();
 		int i = 0;
 		int size = nodes.size();
-		for (Iterator<BinaryTreeNode<T>> iter = nodes.iterator(); iter.hasNext(); i++) {
-			BinaryTreeNode<T> node = iter.next();
-			LinkedBinaryTreeNode<T> linkedNode = new LinkedBinaryTreeNode<T>(node);
+		for (Iterator<BinarySearchTreeNode<T>> iter = nodes.iterator(); iter.hasNext(); i++) {
+			BinarySearchTreeNode<T> node = iter.next();
+			LinkedBinarySearchTreeNode<T> linkedNode = new LinkedBinarySearchTreeNode<T>(node);
 			if (i == 0) {
 				linkedNode.setPrev(null);
 				linkedList.setStart(linkedNode);
