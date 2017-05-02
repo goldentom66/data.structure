@@ -1,5 +1,7 @@
 package com.aussong.data.structure.binarySearchTree;
 
+import com.aussong.data.structure.Node;
+
 public interface LinkedListNode<T extends Comparable<T>> extends Node<T> {
 
 	public LinkedListNode<T> getNext();

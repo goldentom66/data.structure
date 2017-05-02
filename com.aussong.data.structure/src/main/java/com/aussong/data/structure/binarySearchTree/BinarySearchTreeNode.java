@@ -1,15 +1,17 @@
 package com.aussong.data.structure.binarySearchTree;
 
-public class BinarySearchTreeNode<T extends Comparable<T>> implements Node<T> {
-	protected T value;
+import com.aussong.data.structure.DefaultNode;
+
+public class BinarySearchTreeNode<T extends Comparable<T>> extends DefaultNode<T> {
 	protected BinarySearchTree<T> left;
 	protected BinarySearchTree<T> right;
 	
 	public BinarySearchTreeNode() {
+		super();
 	}
 	
 	public BinarySearchTreeNode(T value) {
-		this.value = value;
+		super(value);
 	}
 	
 	public BinarySearchTreeNode(BinarySearchTree<T> left, T value, BinarySearchTree<T> right) {
@@ -28,14 +30,6 @@ public class BinarySearchTreeNode<T extends Comparable<T>> implements Node<T> {
 		this.right.setRoot(new BinarySearchTreeNode<T>(null, right, null));
 		
 		return this;
-	}
-	
-	public T getValue() {
-		return value;
-	}
-	
-	public void setValue(T value) {
-		this.value = value;
 	}
 
 	public BinarySearchTree<T> getLeft() {

@@ -29,8 +29,9 @@ public class DataStructureStories extends JUnitStories {
 	}
 
 	public List<CandidateSteps> candidateSteps() {
-		return new InstanceStepsFactory(configuration(), 
-				new TestBinarySearchTreeToLinkedList()
+		return new InstanceStepsFactory(configuration(),
+				new TestBinarySearchTreeToLinkedList(),
+				new TestStackWithMin()
 			).createCandidateSteps();
 	}
 
